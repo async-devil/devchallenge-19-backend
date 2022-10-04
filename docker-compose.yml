@@ -1,0 +1,38 @@
+version: "3.2"
+services:
+  arangodb:
+    image: arangodb:latest
+    container_name: arangodb
+    hostname: arangodb
+
+    environment:
+      ARANGO_NO_AUTH: 1
+
+    ports:
+      - 8529:8529
+
+    volumes:
+      - arangodb_data:/var/lib/arangodb3
+      - arangodb_apps_data:/var/lib/arangodb3-apps
+
+    restart: always
+
+  main-service:
+    image: main-service
+    container_name: main-service
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 8080:8080
+
+    depends_on:
+      - arangodb
+
+    restart: always
+
+volumes:
+  arangodb_data:
+  arangodb_apps_data:
