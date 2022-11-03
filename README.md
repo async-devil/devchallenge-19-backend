@@ -73,7 +73,7 @@ The second task, which is path, is a task to give the shortest path to a suitabl
 | Following API format     |     28     |       38       |
 | **_Total_**              | **_256_**  |   **_384_**    |
 
-The threshold score for passing to the final is **175**.
+The threshold score for passing to the [final](https://github.com/async-devil/devchallenge-19-backend-final) is **175**.
 
 ## Task you can find at:
 
